@@ -1,6 +1,7 @@
 let video;
 let posenet;
 let pose;
+let canv;
 let skeleton;
 
 function calcAngle(A,B,C) {
@@ -14,14 +15,15 @@ function calcAngle(A,B,C) {
 // p5.js setup() function to set up the canvas for the web cam video stream
 function setup() {
   //creating a canvas by giving the dimensions
-  createCanvas(1000, 1000);
+  canv = createCanvas(500,500);
+  canv.parent("par");
   video = createCapture(VIDEO);
   video.hide()
 
   // setting up the poseNet model to feed in the video feed.
   options = {
-    imageScaleFactor: 0.6,  //0.3
-    outputStride: 8,        //16
+    imageScaleFactor: 0.3,  //0.3
+    outputStride: 16,       //16
     flipHorizontal: false,
     minConfidence: 0.5,
     maxPoseDetections: 5,
@@ -35,6 +37,16 @@ function setup() {
 }
 
 function isSquat() {
+  
+  let sum = 0;
+  for(let i=11;i<17;i++) {
+    sum+=pose.keypoints[i].score;
+  }
+  if(sum<2) {
+    // lower body not detected
+    return false;
+  }
+
   ls = pose.keypoints[5].poistion
   rs = pose.keypoints[6].position
   le = pose.keypoints[7].position
@@ -59,6 +71,8 @@ function isSquat() {
   ankle = la
   ankle.x = (la.x + ra.x)/2.0
   ankle.y = (la.y + ra.y)/2.0
+
+
 
   angle = calcAngle(lh,lk,la);
   if(angle>75 && angle<115) {
@@ -89,15 +103,16 @@ function gotPoses(poses) {
 }
 
 function draw() {
+  translate(video.width, 0);
+  scale(-1, 1);
   image(video,0,0);
   if(pose) {
-    
-    // for(let i=0;i<pose.keypoints.length;i++) {
-    //   let x = pose.keypoints[i].position.x
-    //   let y = pose.keypoints[i].position.y
-    //   fill(0,255,0)
-    //   ellipse(x,y,16,16)
-    // }
+    for(let i=0;i<pose.keypoints.length;i++) {
+      let x = pose.keypoints[i].position.x
+      let y = pose.keypoints[i].position.y
+      fill(0,255,0)
+      ellipse(x,y,16,16)
+    }
     for(let i=0;i<skeleton.length;i++) {
       let a = skeleton[i][0]
       let b = skeleton[i][1]
