@@ -12,7 +12,7 @@ html {
   color: inherit;
 }
 .main-header {
-  background: url(img/hero-img.jpg);
+  background: url(assets/images/hero-img.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -192,7 +192,7 @@ html {
 }
 .contact-container {
   height: 540px;
-  background: url(img/main-banner.jpg);
+  background: url(assets/images/main-banner.jpg);
   margin-top: 30px;
   display: flex;
   justify-content: space-around;
