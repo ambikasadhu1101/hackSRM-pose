@@ -84,3 +84,7 @@ function legRaisesClick() {
 function shoulderPressClick() {
   window.open("exercises/shoulder-press/shoulder-press.html", "_self");
 }
+
+function lateralRaisesClick() {
+  window.open("exercises/lateral-raises/lateral-raises.html", "_self");
+}
