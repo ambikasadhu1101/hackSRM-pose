@@ -19,7 +19,7 @@ html {
 }
 .main-nav{
   /* background-color: crimson; */
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   font-family: 'Ubuntu', sans-serif;
   transition: all 0.3s ease;
@@ -146,7 +146,6 @@ html {
   margin-top: 30px;
   font-family: 'Poppins',sans-serif;
 }
-
 .card-content {
   width: auto;
   height: 500px;
@@ -156,9 +155,9 @@ html {
   padding: 10px;
 }
 .card-img-container {
-  width: 400px;
-  height: 400px;
-  background: #222;
+  width: 350px;
+  height: 350px;
+  background: #fff;
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -172,7 +171,7 @@ html {
   transition: 0.5s ease-out;
 }
 .card-container{
-  background-color: black;
+  background-color: #111;
 }
 .card-title {
   margin-top: 30px;
@@ -215,7 +214,7 @@ html {
 .card {
   display: flex;
   flex-direction: column;
-  width: calc(33% - 20px);
+  width: calc(25% - 20px);
 }
 .main-card-title {
   text-align: center;
@@ -570,7 +569,7 @@ input[type="submit"]:hover {
 .copyright {
   text-align: center;
   color: white;
-  background: black;
+  background: #111;
   padding: 10px;
   font-size: small;
   font-family: "Ubuntu",sans-serif;
