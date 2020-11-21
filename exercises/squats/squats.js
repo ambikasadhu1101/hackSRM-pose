@@ -51,12 +51,6 @@ function isSquat() {
     return -1;
   }
 
-  ls = pose.keypoints[5].poistion
-  rs = pose.keypoints[6].position
-  le = pose.keypoints[7].position
-  re = pose.keypoints[8].position
-  lw = pose.keypoints[9].position
-  rw = pose.keypoints[10].position
   lh = pose.keypoints[11].position
   rh = pose.keypoints[12].position
   lk = pose.keypoints[13].position
@@ -97,7 +91,7 @@ function gotPoses(poses) {
         tooclose = 0;
         goodjob = 0;
         raisehips = 0;
-        lwoerhips = 0;
+        lowerhips = 0;
       }
       return;
     }      
@@ -109,7 +103,7 @@ function gotPoses(poses) {
         tooclose = 0;
         goodjob = 0;
         raisehips = 0;
-        lwoerhips = 0;
+        lowerhips = 0;
       }
     }
     if(squatAngle < 75){
@@ -120,7 +114,7 @@ function gotPoses(poses) {
         tooclose = 0;
         goodjob = 0;
         raisehips = 0;
-        lwoerhips = 0;
+        lowerhips = 0;
       }
     }
     if(squatAngle > 115){
@@ -131,7 +125,7 @@ function gotPoses(poses) {
         tooclose = 0;
         goodjob = 0;
         raisehips = 0;
-        lwoerhips = 0;
+        lowerhips = 0;
       }
     }
     
