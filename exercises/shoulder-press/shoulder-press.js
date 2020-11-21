@@ -61,7 +61,7 @@ calcAngle = (A, B, C) => {
 };
 
 angleForTwoPoints = (x1, y1, x2, y2) => {
-  return (Math.atan((y2 - y1) / (x2 - x1))) * (180 / Math.PI);
+  return Math.atan((y2 - y1) / (x2 - x1)) * (180 / Math.PI);
 };
 
 isInFrame = () => {
