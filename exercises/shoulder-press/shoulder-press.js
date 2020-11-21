@@ -70,7 +70,7 @@ isInFrame = () => {
   for (let i = 5; i < 11; i++) {
     sum += pose.keypoints[i].score;
   }
-  if (sum < 2) {
+  if (sum < 3) {
     return false;
   }
   return true;
@@ -177,7 +177,7 @@ gotPoses = (poses) => {
 
     goodjob += 1;
     if (goodjob > 5) {
-      document.getElementById("par").style.borderColor = "#febc1d";
+      document.getElementById("par").style.borderColor = "green";
       instr.innerHTML = "Doing Good";
       tooclose = 0;
       leftElbowOut = 0;
