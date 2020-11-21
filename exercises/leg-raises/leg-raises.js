@@ -70,7 +70,7 @@ function isBackStraight() {
   shoulder.y = (ls.y + rs.y)/2.0
 
 
-  return Math.abs(Math.atan( (shoulder.y - hip.y) / (shoulder.x - hip.x) )) * (180/Math.pi);
+  return Math.abs(Math.atan( (shoulder.y - hip.y) / (shoulder.x - hip.x) )) * (180/Math.PI);
 }
 
 function isLegStraight() {
