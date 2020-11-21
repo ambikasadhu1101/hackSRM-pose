@@ -74,5 +74,8 @@ function slideTestimonial(e) {
 }
 
 function squatsClick(){
-  window.open("index.html","_self")
+  window.open("exercises/squats/squats.html","_self")
+}
+function legRaisesClick(){
+  window.open("exercises/leg-raises/leg-raises.html","_self")
 }
