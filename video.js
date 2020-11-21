@@ -75,10 +75,7 @@ function isSquat() {
 
 
   angle = calcAngle(lh,lk,la);
-  if(angle>75 && angle<115) {
-    return true;
-  }
-  return false;
+  return angle;
 }
 
 function gotPoses(poses) {
@@ -89,15 +86,28 @@ function gotPoses(poses) {
     
     // shoulder, elbow, wrist, hip, knee, ankle
   
-    if(isSquat()) {
-      var x = document.getElementById("snackbar");
-
+    // if(isSquat()) {
+      squatAngle = isSquat();
+      var positive = document.getElementById("positive");
+      var negativeLow = document.getElementById("negativeLow")
+      var negativeHigh = document.getElementById("negativeHigh");
       // Add the "show" class to DIV
-      x.className = "show";
-
+      //x.className = "show";
+      if(squatAngle > 75 && squatAngle < 115){
+        positive.className = "show";
+        setTimeout(function(){ positive.className = positive.className.replace("show", ""); }, 3000);
+      }
+      if(squatAngle < 75){
+        negativeLow.className = "show";
+        setTimeout(function(){ negativeLow.className = negativeLow.className.replace("show", ""); }, 3000);
+      }
       // After 3 seconds, remove the show class from DIV
-      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-    }
+      if(squatAngle > 115){
+        negativeHigh.className = "show";
+        setTimeout(function(){ negativeHigh.className = negativeHigh.className.replace("show", ""); }, 3000);
+      }
+      
+    // }
 
   }
 }
