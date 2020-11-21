@@ -139,7 +139,7 @@ function draw() {
   scale(-1, 1);
   image(video,0,0);
   if(pose) {
-    for(let i=11;i<pose.keypoints.length;i++) {
+    for(let i=5;i<pose.keypoints.length;i++) {
       let x = pose.keypoints[i].position.x
       let y = pose.keypoints[i].position.y
       fill(128,128,128)
