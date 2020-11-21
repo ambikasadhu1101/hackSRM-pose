@@ -1,9 +1,9 @@
 body{
-  background-color: #e74141;
+  background-color: #555;
 }
 #defaultCanvas0{
-  height: 400px !important;
-  width: 45vw !important;
+  height: 360px !important;
+  width: 360px !important;
 }
 h2{
   text-align: center;
@@ -18,15 +18,13 @@ h1{
 .center {
   background-color: #fff;
     margin: auto;
-    width: 45vw !important;
-    height: 400px;
-    border: 3px solid green;
-    padding: 10px;
-  }
-  .c1{
-    width: 100%;
-    display: inline-flex;
-  }
+    width: 360px !important;
+    height: 360px;
+}
+.c1{
+  width: 100%;
+  display: inline-flex;
+}
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #positive,#negativeLow, #negativeHigh {
     visibility: hidden; /* Hidden by default. Visible on click */

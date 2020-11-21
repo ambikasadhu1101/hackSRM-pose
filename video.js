@@ -3,6 +3,10 @@ let posenet;
 let pose;
 let canv;
 let skeleton;
+let tooclose = 0;
+let lowerhips = 0;
+let raisehips = 0;
+let goodjob = 0;
 
 function calcAngle(A,B,C) {
   var AB = Math.sqrt(Math.pow(B.x-A.x,2)+ Math.pow(B.y-A.y,2));    
@@ -40,11 +44,11 @@ function isSquat() {
   
   let sum = 0;
   for(let i=11;i<17;i++) {
-    sum+=pose.keypoints[i].score;
+    sum+=pose.keypoints[i].score
   }
   if(sum<2) {
     // lower body not detected
-    return false;
+    return -1;
   }
 
   ls = pose.keypoints[5].poistion
@@ -83,32 +87,50 @@ function gotPoses(poses) {
   if(poses.length > 0) {
     pose = poses[0].pose;
     skeleton = poses[0].skeleton;
+    var instr = document.getElementById("instruction");
+    squatAngle = isSquat();
+    if(squatAngle == -1) {
+      tooclose+=1;
+      if(tooclose > 5) {
+        instr.innerHTML = "Too close to the camera";
+        tooclose = 0;
+        goodjob = 0;
+        raisehips = 0;
+        lwoerhips = 0;
+      }
+      return;
+    }      
+    if(squatAngle > 75 && squatAngle < 115){
+      goodjob+=1;
+      if(goodjob > 2) {
+        instr.innerHTML = "Good Job";
+        tooclose = 0;
+        goodjob = 0;
+        raisehips = 0;
+        lwoerhips = 0;
+      }
+    }
+    if(squatAngle < 75){
+      raisehips+=1;
+      if(raisehips > 5) {
+        instr.innerHTML = "Raise your hips";
+        tooclose = 0;
+        goodjob = 0;
+        raisehips = 0;
+        lwoerhips = 0;
+      }
+    }
+    if(squatAngle > 115){
+      lowerhips+=1;
+      if(lowerhips > 5) {
+        instr.innerHTML = "Lower your hips";
+        tooclose = 0;
+        goodjob = 0;
+        raisehips = 0;
+        lwoerhips = 0;
+      }
+    }
     
-    // shoulder, elbow, wrist, hip, knee, ankle
-  
-    // if(isSquat()) {
-      squatAngle = isSquat();
-      var positive = document.getElementById("positive");
-      var negativeLow = document.getElementById("negativeLow")
-      var negativeHigh = document.getElementById("negativeHigh");
-      // Add the "show" class to DIV
-      //x.className = "show";
-      if(squatAngle > 75 && squatAngle < 115){
-        positive.className = "show";
-        setTimeout(function(){ positive.className = positive.className.replace("show", ""); }, 3000);
-      }
-      if(squatAngle < 75){
-        negativeLow.className = "show";
-        setTimeout(function(){ negativeLow.className = negativeLow.className.replace("show", ""); }, 3000);
-      }
-      // After 3 seconds, remove the show class from DIV
-      if(squatAngle > 115){
-        negativeHigh.className = "show";
-        setTimeout(function(){ negativeHigh.className = negativeHigh.className.replace("show", ""); }, 3000);
-      }
-      
-    // }
-
   }
 }
 
@@ -117,11 +139,11 @@ function draw() {
   scale(-1, 1);
   image(video,0,0);
   if(pose) {
-    for(let i=0;i<pose.keypoints.length;i++) {
+    for(let i=5;i<pose.keypoints.length;i++) {
       let x = pose.keypoints[i].position.x
       let y = pose.keypoints[i].position.y
-      fill(0,255,0)
-      ellipse(x,y,16,16)
+      fill(128,128,128)
+      ellipse(x,y,8,8)
     }
     for(let i=0;i<skeleton.length;i++) {
       let a = skeleton[i][0]
