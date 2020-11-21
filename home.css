@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+
 body {
-  background-color: #333;
+  background-color: black;
 }
 * {
   margin: 0;
@@ -14,27 +17,58 @@ html {
   font-family: inherit;
   color: inherit;
 }
+.main-nav{
+  /* background-color: crimson; */
+  position: fixed;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  transition: all 0.3s ease;
+}
+.main-nav .logo-link {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+.main-nav .logo-link span{
+  color: crimson;
+}
+.main-nav .nav-list li a{
+  color: #fff;
+}
+.main-nav.sticky{
+  padding: 30px 0;
+  color: crimson;
+}
 .main-header {
-  background: url(assets/images/hero-img.jpg);
+  background: url(assets/images/demo6.jpg) ;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 40vh;
+  height: 100vh;
   width: 100%;
   position: relative;
+  background-attachment: fixed;
 }
+
+
 .hero-content {
   position: absolute;
   top: 50%;
   left: 30px;
   transform: translateY(-50%);
+  font-family: 'Ubuntu',sans-serif;
 }
-.header-nav {
+.max-width{
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+ .header-nav .max-width {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
-}
+} 
 .nav-list {
   list-style-type: none;
   display: flex;
@@ -51,20 +85,48 @@ html {
   font-weight: bold;
   transition: color 0.3s;
 }
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
 .nav-link:hover {
   color: #ccc;
 }
 .nav-item {
   margin-left: 50px;
+  list-style: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+.nav-list .nav-item a:hover{
+  color: crimson;
 }
 .main-heading {
   font-weight: normal;
-  color: #fff;
-  font-size: 40px;
+  color: white;
+  font-size: 75px;
 }
 .main-heading-focus {
-  color: #febc1d;
+  color:crimson;
   font-weight: bold;
+  font-size: 60px;
 }
 .sub-heading {
   text-align: right;
@@ -82,14 +144,9 @@ html {
 }
 .main-container {
   margin-top: 30px;
+  font-family: 'Poppins',sans-serif;
 }
-.main-card-title {
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
+
 .card-content {
   width: auto;
   height: 500px;
@@ -101,7 +158,7 @@ html {
 .card-img-container {
   width: 400px;
   height: 400px;
-  background: #888;
+  background: #222;
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -114,12 +171,15 @@ html {
   height: 90%;
   transition: 0.5s ease-out;
 }
+.card-container{
+  background-color: black;
+}
 .card-title {
   margin-top: 30px;
   font-size: 28px;
   font-weight: bold;
   text-align: center;
-  color: #ffffff;
+  color:crimson;
 }
 .card-span {
   font-weight: normal;
@@ -155,6 +215,14 @@ html {
 .card {
   display: flex;
   flex-direction: column;
+  width: calc(33% - 20px);
+}
+.main-card-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
 }
 .banner-container {
   margin-top: 30px;
@@ -221,6 +289,14 @@ td {
   padding: 10px;
   font-size: 18px;
   letter-spacing: 1px;
+  color: black;
+}
+#test{
+  color: black;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
 }
 .contact-form {
   width: 100%;
@@ -267,16 +343,22 @@ input[type="submit"]:hover {
 }
 .testimonial-container {
   height: 300px;
-  background: #1e1e1e;
+  background: white;
   margin-top: 30px;
   display: flex;
+  font-family: "Ubuntu", sans-serif;
 }
 .testimonials {
   margin: auto;
-  width: 50%;
+  width: 30%;
+  background-color: white;
   height: 100%;
   position: relative;
   overflow: hidden;
+}
+.user-message{
+  color: crimson;
+  font-style: italic;
 }
 #user-1 {
   position: absolute;
@@ -320,21 +402,24 @@ input[type="submit"]:hover {
 }
 .user-img {
   height: 100%;
+  width: 100%;
+  
 }
 .user-info {
   width: calc(100% - 150px);
-  color: white;
+  /* color: white; */
   padding: 20px;
 }
 .user-name {
   font-size: 18px;
   font-weight: bold;
+  color: black;
   margin-bottom: 10px;
 }
 .btn {
   height: 15px;
   width: 15px;
-  border: 2px solid white;
+  border: 2px solid black;
   border-radius: 50%;
   cursor: pointer;
   margin-left: 15px;
@@ -347,13 +432,14 @@ input[type="submit"]:hover {
   display: flex;
 }
 .bg {
-  background: white;
+  background: black;
 }
 .no-bg {
   background: transparent;
 }
 .footer {
-  background: #1e1e1e;
+  background:white;
+  font-family: "Poppins",sans-serif;
   /* margin-top: 30px; */
 }
 .news-letter {
@@ -386,6 +472,9 @@ input[type="submit"]:hover {
   font-size: 16px;
   color: #ccc;
 }
+/* .footer{
+  background-color: white;
+} */
 .footer-border {
   height: 3px;
   background: white;
@@ -412,10 +501,11 @@ input[type="submit"]:hover {
   margin-bottom: 10px;
 }
 .company-desc {
-  color: white;
+  color: black;
+  font-weight: 700;
 }
 .footer-contact-info {
-  color: white;
+  color: black;
 }
 .footer-contact-info td {
   padding-left: 0;
@@ -480,6 +570,8 @@ input[type="submit"]:hover {
 .copyright {
   text-align: center;
   color: white;
-  background: #2a2a2a;
+  background: black;
   padding: 10px;
+  font-size: small;
+  font-family: "Ubuntu",sans-serif;
 }
