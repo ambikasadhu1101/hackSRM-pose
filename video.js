@@ -15,7 +15,7 @@ function calcAngle(A,B,C) {
 // p5.js setup() function to set up the canvas for the web cam video stream
 function setup() {
   //creating a canvas by giving the dimensions
-  canv = createCanvas(500,500);
+  canv = createCanvas(480,480);
   canv.parent("par");
   video = createCapture(VIDEO);
   video.hide()
