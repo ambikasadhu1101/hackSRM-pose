@@ -21,7 +21,9 @@ function slideTestimonial(e) {
       e.target.classList.remove("no-bg");
       e.target.nextElementSibling.classList.add("no-bg");
       e.target.nextElementSibling.nextElementSibling.classList.add("no-bg");
-      e.target.nextElementSibling.nextElementSibling.nextElementSibling.classList.add("no-bg");
+      e.target.nextElementSibling.nextElementSibling.nextElementSibling.classList.add(
+        "no-bg"
+      );
     }
     if (e.target.id == "btn-2") {
       user1.style.left = "-100%";
@@ -50,9 +52,7 @@ function slideTestimonial(e) {
       e.target.previousElementSibling.previousElementSibling.classList.add(
         "no-bg"
       );
-      e.target.nextElementSibling.classList.add(
-        "no-bg"
-      );
+      e.target.nextElementSibling.classList.add("no-bg");
     }
     if (e.target.id == "btn-4") {
       user1.style.left = "-100%";
@@ -73,9 +73,14 @@ function slideTestimonial(e) {
   }
 }
 
-function squatsClick(){
-  window.open("exercises/squats/squats.html","_self")
+function squatsClick() {
+  window.open("exercises/squats/squats.html", "_self");
 }
-function legRaisesClick(){
-  window.open("exercises/leg-raises/leg-raises.html","_self")
+
+function legRaisesClick() {
+  window.open("exercises/leg-raises/leg-raises.html", "_self");
+}
+
+function shoulderPressClick() {
+  window.open("exercises/shoulder-press/shoulder-press.html", "_self");
 }
