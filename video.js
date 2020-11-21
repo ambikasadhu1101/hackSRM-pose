@@ -92,6 +92,7 @@ function gotPoses(poses) {
     if(squatAngle == -1) {
       tooclose+=1;
       if(tooclose > 5) {
+        document.getElementById("par").style.borderColor ="#febc1d";
         instr.innerHTML = "Too close to the camera";
         tooclose = 0;
         goodjob = 0;
@@ -103,6 +104,7 @@ function gotPoses(poses) {
     if(squatAngle > 75 && squatAngle < 115){
       goodjob+=1;
       if(goodjob > 2) {
+        document.getElementById("par").style.borderColor ="green";
         instr.innerHTML = "Good Job";
         tooclose = 0;
         goodjob = 0;
@@ -113,6 +115,7 @@ function gotPoses(poses) {
     if(squatAngle < 75){
       raisehips+=1;
       if(raisehips > 5) {
+        document.getElementById("par").style.borderColor ="#febc1d";
         instr.innerHTML = "Raise your hips";
         tooclose = 0;
         goodjob = 0;
@@ -123,6 +126,7 @@ function gotPoses(poses) {
     if(squatAngle > 115){
       lowerhips+=1;
       if(lowerhips > 5) {
+        document.getElementById("par").style.borderColor ="#febc1d";
         instr.innerHTML = "Lower your hips";
         tooclose = 0;
         goodjob = 0;
