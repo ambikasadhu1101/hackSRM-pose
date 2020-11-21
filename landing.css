@@ -1,0 +1,113 @@
+body {
+  margin: 0px;
+  background: #1e242a;
+}
+#main {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+#box1 {
+  width: 620px;
+  height: 620px;
+  background-image: url("assets/images/before");
+  position: absolute;
+  bottom: -100%;
+  left: 30%;
+  animation: anim 2s forwards, anim2 3s forwards 3s;
+}
+#box1::after {
+  width: 620px;
+  height: 620px;
+  background-image: url("assets/images/after");
+  position: absolute;
+  z-index: -1;
+  left: 0px;
+  content: "";
+}
+@keyframes anim {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0%;
+  }
+}
+@keyframes anim2 {
+  from {
+    left: 30%;
+    width: 620px;
+  }
+  to {
+    width: 0px;
+    left: 50%;
+  }
+}
+#box2 {
+  width: auto;
+  height: auto;
+  font-family: "Bahnschrift Condensed";
+  font-weight: 500;
+  color: white;
+  font-size: 10em;
+  line-height: 130px;
+  position: absolute;
+  overflow: hidden;
+  top: 250px;
+  left: 100px;
+}
+#text {
+  position: relative;
+  left: -100%;
+  animation: anim3 2s forwards 3s;
+}
+@keyframes anim3 {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+#box3 {
+  overflow: hidden;
+}
+#container {
+  position: absolute;
+  width: 100%;
+  top: -100%;
+  animation: anim4 2s forwards 2.5s;
+}
+#logo {
+  float: left;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+#logo img {
+  width: 50px;
+}
+#menu {
+  font-family: "Bahnschrift Condensed";
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  margin-right: 150px;
+  color: white;
+  float: right;
+}
+#menu ul {
+  list-style: none;
+}
+#menu ul li {
+  margin-left: 100px;
+  display: inline-block;
+}
+@keyframes anim4 {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
