@@ -2,7 +2,7 @@
 
 
 body {
-  background-color: black;
+  background-color: #111;
 }
 * {
   margin: 0;
@@ -147,9 +147,10 @@ html {
   font-family: 'Poppins',sans-serif;
 }
 .card-content {
-  width: auto;
-  height: 500px;
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(350px, 1fr));
+  height: auto;
   justify-content: space-between;
   margin: 10px;
   padding: 10px;
@@ -349,7 +350,7 @@ input[type="submit"]:hover {
 }
 .testimonials {
   margin: auto;
-  width: 30%;
+  width: 80%;
   background-color: white;
   height: 100%;
   position: relative;
@@ -360,6 +361,7 @@ input[type="submit"]:hover {
   font-style: italic;
 }
 #user-1 {
+  text-align: -webkit-center;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -367,6 +369,7 @@ input[type="submit"]:hover {
   transition: 0.3s;
 }
 #user-2 {
+  text-align: -webkit-center;
   position: absolute;
   top: 50%;
   left: 100%;
@@ -374,6 +377,7 @@ input[type="submit"]:hover {
   transition: 0.3s;
 }
 #user-3 {
+  text-align: -webkit-center;
   position: absolute;
   top: 50%;
   left: 150%;
@@ -381,6 +385,7 @@ input[type="submit"]:hover {
   transition: 0.3s;
 }
 #user-4 {
+  text-align: -webkit-center;
   position: absolute;
   top: 50%;
   left: 200%;
@@ -405,9 +410,9 @@ input[type="submit"]:hover {
   
 }
 .user-info {
-  width: calc(100% - 150px);
+  width: auto;
   /* color: white; */
-  padding: 20px;
+  padding: 14px;
 }
 .user-name {
   font-size: 18px;
@@ -489,7 +494,7 @@ input[type="submit"]:hover {
 }
 .footer-content {
   flex-basis: 80%;
-  justify-content: center;
+  text-align-last: center;
 }
 .footer-logo,
 .footer-title {
@@ -506,6 +511,8 @@ input[type="submit"]:hover {
 }
 .footer-contact-info {
   color: black;
+  margin: auto;
+  padding-right: 60px;
 }
 .footer-contact-info td {
   padding-left: 0;

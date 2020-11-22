@@ -490,7 +490,7 @@ input[type="submit"]:hover {
 }
 .footer-content {
   flex-basis: 80%;
-  justify-content: center;
+  text-align-last: center;
 }
 .footer-logo,
 .footer-title {
@@ -507,6 +507,8 @@ input[type="submit"]:hover {
 }
 .footer-contact-info {
   color: black;
+  margin: auto;
+  padding-right: 60px;
 }
 .footer-contact-info td {
   padding-left: 0;

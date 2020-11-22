@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 body{
   background-color: #555;
 }
@@ -108,26 +109,57 @@ h1{
     color: inherit;
   }
   .main-header {
-    background: #1f1f1f;
-    background-size: inherit;
+    background: #1f1f1f ;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 7vh;
+    height: auto;
     width: 100%;
     position: relative;
+    background-attachment: fixed;
   }
+  
+  .main-nav{
+    /* background-color: crimson; */
+    /* position: fixed; */
+    width: 100%;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+  }
+  .main-nav .logo-link {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+  }
+  .main-nav .logo-link span{
+    color: crimson;
+  }
+  .main-nav .nav-list li a{
+    color: #fff;
+  }
+  .main-nav.sticky{
+    padding: 30px 0;
+    color: crimson;
+  }
+  
   .hero-content {
     position: absolute;
     top: 50%;
     left: 30px;
     transform: translateY(-50%);
+    font-family: 'Ubuntu',sans-serif;
   }
-  .header-nav {
+  .max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+  }
+   .header-nav .max-width {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-  }
+  }  
   .nav-list {
     list-style-type: none;
     display: flex;
